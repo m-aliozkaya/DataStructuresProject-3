@@ -5,7 +5,7 @@
 #include <queue>
 #include <stack>
 
-// Aðacý oluþturan methot. LoadTree() metodunu kullanarak .txt dosyasýndan verileri okur ve aðacý oluþturur.
+// Agaci olusturan methot. LoadTree() metodunu kullanarak .txt dosyasindan verileri okur ve agaci olusturur.
 void StudentTree::CreateTree(string path)
 {
 	root = NULL;
@@ -14,7 +14,7 @@ void StudentTree::CreateTree(string path)
 	LoadTree();
 }
 
-// .txt dosyasýndan öðrenciyi okur ve addNode() metodunu kullanarak aðaca bu öðrenciyi ekler.
+// .txt dosyasindan Ã¶grenciyi okur ve addNode() metodunu kullanarak agaca bu Ã¶grenciyi ekler.
 void StudentTree::LoadTree()
 {
 	ifstream fileReader(filePath);
@@ -37,11 +37,11 @@ void StudentTree::LoadTree()
 		fileReader.close();
 	}
 	else {
-		cout << "FileReader Açýlamnameý" << endl;
+		cout << "FileReader AÃ§Ã½lamnameÃ½" << endl;
 	}
 }
 
-// Kendisine verilen öðrenciyi aðaca ekler.
+// Kendisine verilen Ã¶grenciyi agaca ekler.
 void StudentTree::AddNode(StudentNode* addedStudent)
 {
 	StudentNode* rootPtr = root;
@@ -84,7 +84,7 @@ void StudentTree::AddNode(StudentNode* addedStudent)
 		}
 		else
 		{
-			std::cout << "Aðaç veri yapýsýna ayný veri eklenemez.";
+			std::cout << "AÃ°aÃ§ veri yapÃ½sÃ½na aynÃ½ veri eklenemez.";
 		}
 		if (isAdded)
 		{
@@ -93,7 +93,7 @@ void StudentTree::AddNode(StudentNode* addedStudent)
 	}
 }
 
-// Öðrencilerin nasýl listeleneceðini seçtirir. Ona göre InOrdered, PreOrdered veya PostOrdered þekilde öðrencileri ekrana yazdýrýr. 
+// Ã–grencilerin nasil listelenecegini seÃ§tirir. Ona gÃ¶re InOrdered, PreOrdered veya PostOrdered sekilde Ã¶grencileri ekrana yazdirir. 
 void StudentTree::ListStudents() {
 	int selection = 0;;
 	cout << "Nasil Listelemek Istersiniz?" << endl;
@@ -118,7 +118,7 @@ void StudentTree::ListStudents() {
 
 }
 
-// In Order ile öðrencileri ekrana yazdýrýr.
+// In Order ile Ã¶grencileri ekrana yazdirir.
 void StudentTree::ListInOrdered(StudentNode* root)
 {
 	if (root)
@@ -129,7 +129,7 @@ void StudentTree::ListInOrdered(StudentNode* root)
 	}
 }
 
-// Pre Order ile öðrencileri ekrana yazdýrýr.
+// Pre Order ile Ã¶grencileri ekrana yazdirir.
 void StudentTree::ListPreOrdered(StudentNode* root)
 {
 	if (root)
@@ -140,7 +140,7 @@ void StudentTree::ListPreOrdered(StudentNode* root)
 	}
 }
 
-// Post Order ile öðrencileri ekrana yazdýrýr.
+// Post Order ile Ã¶grencileri ekrana yazdirir.
 void StudentTree::ListPostOrdered(StudentNode* root)
 {
 	if (root)
@@ -151,7 +151,7 @@ void StudentTree::ListPostOrdered(StudentNode* root)
 	}
 }
 
-// Kendisine verilen öðrenci numarasýna göre bulur ve öðrenciyi aðaçtan DeleteNode() methodu ile siler.
+// Kendisine verilen Ã¶grenci numarasina gÃ¶re bulur ve Ã¶grenciyi agaÃ§tan DeleteNode() methodu ile siler.
 void StudentTree::DeleteStudent()
 {
 	string number;
@@ -194,7 +194,7 @@ void StudentTree::DeleteStudent()
 	}
 }
 
-// Kendisine verilen node' u aðaç yapýsýndan siler. 
+// Kendisine verilen node' u agaÃ§ yapisindan siler. 
 void StudentTree::DeleteNode(StudentNode** deletedNode)
 {
 	StudentNode* deletedNodePtr = *deletedNode, * q;
@@ -217,7 +217,7 @@ void StudentTree::DeleteNode(StudentNode** deletedNode)
 	}
 }
 
-// Öðrencinin numarasýný alýr ve nasýl bir arama yapýlmak istediði seçtirilir. Ýlk geniþlik veya ilk derinlik ile arama yapýlýr.
+// Ã–grencinin numarasini alir ve nasil bir arama yapilmak istedigi seÃ§tirilir. Ilk genislik veya ilk derinlik ile arama yapilir.
 void StudentTree::SearchStudent() {
 	string studentNumber;
 
@@ -245,7 +245,7 @@ void StudentTree::SearchStudent() {
 	cout << "Yazdirma Bitti";
 }
 
-// Ýlk derinlik arama ile öðrenciyi arar
+// Ilk derinlik arama ile Ã¶grenciyi arar
 void StudentTree::SearchDepthFirst(string number)
 {
 	int counter = 0;
@@ -274,7 +274,7 @@ void StudentTree::SearchDepthFirst(string number)
 	}
 }
 
-// Ýlk geniþlik arama ile öðrenciyi arar
+// Ilk genislik arama ile Ã¶grenciyi arar
 void StudentTree::SearchBreadthFirst(string number)
 {
 	queue<StudentNode*> queue;
@@ -303,7 +303,7 @@ void StudentTree::SearchBreadthFirst(string number)
 	}
 }
 
-// Eðer kökü verirsek aðaç için bellekte ayrýlmýþ tüm yerleri siler. 
+// Eger kÃ¶kÃ¼ verirsek agaÃ§ iÃ§in bellekte ayrilmis tÃ¼m yerleri siler. 
 void StudentTree::ClearTree(StudentNode* root)
 {
 	if (root)
@@ -322,7 +322,7 @@ void StudentTree::ClearTree(StudentNode* root)
 	}
 }
 
-// Aðacýmýzý bir .txt dosyasýna Pre Order' a göre kaydediyoruz.
+// Agacimizi bir .txt dosyasina Pre Order' a gÃ¶re kaydediyoruz.
 void StudentTree::SaveTree()
 {
 	string number = filePath.substr(4);
@@ -349,7 +349,7 @@ void StudentTree::WritePreOrdered(StudentNode* root) {
 	}
 }
 
-// Aðacý kaydetme metodunu çalýþtýrýyoruz, aðacý bellekten siliyoruz ve kapatýyoruz.
+// Agaci kaydetme metodunu Ã§alistiriyoruz, agaci bellekten siliyoruz ve kapatiyoruz.
 void StudentTree::CloseTree()
 {
 	SaveTree();
